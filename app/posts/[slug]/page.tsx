@@ -121,7 +121,7 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
         <div className="mb-8">
           <h2 className="text-2xl font-bold mb-4">Gallery</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {gallery.map((image, index) => (
+            {gallery.map((image: { url: string; imgix_url: string }, index: number) => (
               <div key={index} className="rounded-lg overflow-hidden">
                 <img
                   src={`${image.imgix_url}?w=800&h=600&fit=crop&auto=format,compress`}
